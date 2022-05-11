@@ -19,7 +19,7 @@ class ServerJenkinsRepository(ServerRepository):
         
     def build(self, name: str, params: JobParams) -> None:
         self.__name = name
-        queue_id = self.__connection.build_job(name, parameters=json.loads(params), token=self.__token)
+        queue_id = self.__connection.build_job(name, parameters=json.loads(params))
         self.__queue_id = queue_id
 
     def __get_queue_info(self):
